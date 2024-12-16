@@ -1,0 +1,43 @@
+
+body{
+  display: grid;
+  background-color: cadetblue;
+  Place-items: center;
+  height: 100vh;
+}
+
+table{
+  border-collapse: collapse;
+  width: 80%;
+  background-color: #222222;
+  margin: 40px 20px 40px 20px;
+
+  th, td{
+   border: 1px inset grey;
+    padding: 20px 20px 20px 20px;
+    color: white;
+
+  }
+input{
+  background-color: cadetblue;
+  color: white;
+  border: none;
+  padding:  10px 10px 10px 10px;
+  border-radius: 0.5em;
+}
+  tbody tr:nth-child(odd) {
+    background-color: #1d1c21;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color:  #3c3e4a
+  }
+.center{
+  text-align: center;
+}
+  tr {
+    border: 1px solid black;
+    text-align: left;
+    font-size: 1.5em;
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>XCompany</title>
+</head>
+<body>
+<form>
+<h1>Job Application Form</h1>
+<label for="name">Name:</label>
+<input type="text" id="name"/></br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname" disabled placeholder="Rayankula"><br>
+<label for="password">Password:</label>
+<input type="password" id="password"/></br>
+<input type="hidden" />
+<label for="age">Age:</label>
+<input type="number" id="age"</input></br>
+<label for="Contact Number">Contact Number:</label>
+<input type="tel" id="Contact Number" placeholder="(000)-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/> </br>
+<lable for="emailId">Email ID</lable>
+<input type="email" id="emailId" /> </br>
+<lable for="male">Gender:</lable>
+<input type="radio" id="male" name="gender">
+<label for="male">Male</label>
+<input type="radio" id="female" name="gender" checked="checkbox">
+<label for="female">Female</label></br>
+<label for="married">Marital status:</label></br>
+<input type="checkbox" id="married">Married</input></br>
+<input type="checkbox" id="unmarried">Unmarried</input></br>
+<input type="checkbox" id="separated">Separated</input></br>
+<input type="checkbox" id="single">Single</input></br>
+<label for="location">Please fill the below Address:</label><br>
+<label for="location">State:</label>
+<input type="search" id="location"/></br>
+ <label for="city">City:</label>
+<select id="city">
+   <option value="New York, NY">New York, NY</option>
+  <option value="New Jersy, NJ">New Jersy, NJ</option>
+  <option value="Saint peters, MO">saint peters, MO</option>
+</select></br>
+  <label for="DOB">Date of Birth</label>
+<input type="date" id="DOB"/></br>
+  <label for="Prgskills">Select Programming Skills:</label>
+  <input list="Prg" id="Prgskills"/></br>
+  <datalist id="Prg">
+  <option>Java</option>
+  <option>HTML</option>
+  <option>CSS</option>
+  <option>Java Script</option>
+  <option>Selenium</option>
+  </datalist>
+<label for="PS">Programming Skills (Rate 0 to 10):</label>
+<input type="range" id="ps" name="programming-skills" min="0" max="10" value="5"/></br>
+  <label for="roles">Roles and responsibilities:</label>
+  <textarea id="roles" cols="60" rows="03"></textarea></br>
+  <label for="resupload">Upload your Resume</label>
+  <input type="file" id="resupload"/></br>
+<label for="validity">Visa Validity: </label>
+<input type="month" id="validity"/></br>
+<label for="time">Available time for interview:</label>
+<input type="time" id="time"/></br>
+<label for="startweek">Expected Start Week :</label>
+<input type="week" id="startweek"/></br>
+<label for="url">LinkedIn URL:</label>
+<input type="url" id="url" name="website" placeholder="https://www.linkedin.com" required></input></br>
+<label for="color">Choose your favorite color:</label>
+<input type="color" id="color"/></br>
+<lable for="Current">Current Date & Time</lable>
+<input type="datetime-local" id="current"</input></br>
+<lable for="image">Upload image:</lable>
+<input type="image" id="image" name="image" src="/Users/saisudheerparvathaneni/Downloads" alt="Loading"></input></br>
+<input type="button" value="Click"/></br>
+<label for="reset">Reset the Form</label>
+<input type="reset" id="reset"/></br>
+<input type="submit" value="Submit"/>
+</form>
+</body>
+</html>
