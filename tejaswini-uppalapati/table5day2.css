@@ -1,0 +1,18 @@
+table {
+    border: 2px solid black;
+    width: 100%;
+    border-spacing: 0.5mm;
+  }
+  
+  th, td {
+    border: 2px solid black;
+    padding: 3px;
+  }
+  th {
+    text-align: center;
+  }
+  
+  caption {
+    font-weight: bold;
+    padding: 5px 0;
+  }
