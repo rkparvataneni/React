@@ -1,0 +1,57 @@
+
+.page {
+    display: inline-flex;
+    background-color: mediumpurple;
+}
+
+.message {
+    margin-top: 3%;
+    margin-left: 15%;
+    margin-bottom: 25%;
+    width: 60%;
+    padding: 120px 80px 23px 100px;
+    background-color: darkturquoise;
+    color: white;
+    text-align: center;
+}
+.input{
+    margin-right: 20px;
+}
+span{
+    color: grey;
+}
+input,textarea{
+
+    background-color: lightgray;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+textarea{
+    height: 60px;
+}
+button{
+  color: white;
+    background-color: darkturquoise;
+    border: none;
+    border-radius: 30px;
+    width:50%;
+    height: 40px;
+    margin-left: 90px;
+}
+h1{
+    text-align: center;
+
+}
+.details {
+    margin-top: 3%;
+    margin-right: 25%;
+    margin-bottom: 25%;
+    width: 60%;
+    background-color: white;
+    padding: 40px 50px 90px 50px;
+    color: black;
+    text-align: left;
+
+}
