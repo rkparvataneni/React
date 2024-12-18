@@ -1,0 +1,33 @@
+td,th{
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+
+}
+.table1{
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+
+
+
+
+}
+.table2{
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+
+
+}
+.table1heading{
+    background-color: aqua;
+
+}
+.table2heading{
+    background-color: yellow;
+}
+
