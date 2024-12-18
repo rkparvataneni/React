@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link href="LoginFormStyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form>
+<h1>New Member Registration </h1>
+<div class="login-box">
+<div class="fullname" id="login">
+    <lable for="firstname">First Name<sup>*</sup></lable>
+    <input type="text" id="firstname" name="firstName" required></br>
+    <lable for="lastName" class="fullname">Last Name</lable>
+    <input type="text" id="lastName" name="lastName" required></br>
+    </div>
+<div class="fulladdress">
+    <lable for="address">Address</lable>
+    <input type="text" id="address" name="address" required>
+    <lable for="address2" class="fulladdress">Address2</lable>
+    <input type="text" id="address2" name="address2" required>
+</div>
+<div class="city">
+    <lable for="city">City</lable>
+    <input type="text" id="city" name="city" required>
+</div>
+    <div class="fullstatezip">
+    <lable for="state">State/Province</lable>
+    <select id="state" name="state" required>
+        <option value=""></option>
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="AR">Arkansas</option>
+        <option value="CA">California</option>
+    </select>
+    <lable for="zipcode" class="fullstatezip">Zip/Postalcode</lable>
+    <input type="number" id="zipcode" name="zipcode" required>
+    </div>
+<div class="num">
+    <lable for="phonenum">Phone</lable>
+    <input type="number" id="phonenum" name="phonenumber" required>
+</div>
+<div class="mail">
+    <lable for="email" >Email Address</lable>
+    <input type="email" id="email" name="email" required>
+</div>
+<div class="radio">
+    <lable for="mtype">Membership Type</lable>
+    <input type="radio" id="mtype" name="membership Type" required>Standard</input>
+    <input type="radio" id="mtype" name="membership Type" required>Premium</input>
+    <input type="radio" id="mtype" name="membership Type" required>Ultimate</input>
+</div>
+    </div>
+</form>
+</body>
+</html>
