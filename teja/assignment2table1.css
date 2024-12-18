@@ -1,0 +1,30 @@
+th{
+    border: 1px solid black;
+}
+td{
+    border: 1px solid black;
+}
+.bolding{
+    font-weight: bold;
+    text-align: center;
+}
+
+table{
+    border: 1px solid black;
+    width: 60%;
+
+}
+.container{
+    display: inline-block;
+    position: relative;
+    width: 80%;
+    height: 80%;
+
+
+}
+h3{
+
+    padding-left: 250px;
+    margin:5px;
+
+}
