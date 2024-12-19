@@ -26,25 +26,26 @@ form {
         padding: 05px;
         margin-bottom: 20px;
     }
-
-    .inner-details {
-        input {
-            width: 200px;
-        }
-        select{
-            width: 200%;
-        }
-        .firstname,.address,.address2, .lastname, .state, .zipCode {
-            padding-right: 05%;
-        }
-        .zipCode {
-            padding-left: 115px;
-        }
-
+    .firstname,.address,.address2, .lastname, .state, .zipCode {
+        padding-right: 05%;
     }
+    .formDetails {
 
+        .inner-details {
+
+            input {
+                width: 200px;
+            }
+
+            .zipCode {
+                padding-left: 60px;
+                width: 40%;
+            }
+        }
+    }
     select {
         text-align: left;
+        width: 150%;
         border-radius: 05px;
         padding: 05px;
         margin-right: 20px;
@@ -55,7 +56,7 @@ form {
         font-size: small;
     }
 }
-.fullname, .fulladdress, .fullstatezip, .num, .mail,.city {
+.fullname, .fulladdress, .fullstatezip, .num, .mail,.flex {
     display: flex;
 }
 
