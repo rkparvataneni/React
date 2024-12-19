@@ -1,0 +1,54 @@
+
+.name, .address, .state_zipcode, .city, .email, .phone, .radio{
+    display: flex;
+}
+.firstname, .lastname, .address1, .address2,.city1, .state, .zip, .email1, .phone1,.radio1 {
+    padding: 10px;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    h3{
+        text-align: center;
+        color: blueviolet;
+    }
+    input:not(#standard):not(#premium):not(#ultimate):not(#zipcode):not(#phone):not(#email), #state{
+        border-radius: 5px;
+        height: 30px;
+        width: 250px;
+    }
+    #state{
+        width: 175px;
+    }
+    #zipcode{
+        width: 70px;
+        border-radius: 5px;
+        height: 30px;
+
+  }
+    #phone{
+        width: 300px;
+        border-radius: 5px;
+        height: 30px;
+    }
+    #email{
+        width: 300px;
+        border-radius: 5px;
+        height: 30px;
+    }
+    label{
+        padding-bottom: 5px;
+    }
+
+}
+.formcontainer{
+    border: 3px solid dodgerblue;
+    padding-right: 30px;
+
+}
+#zipcode{
+    width: 60px;
+}
