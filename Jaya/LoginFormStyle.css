@@ -1,27 +1,66 @@
 form {
-    border: 2px solid black;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
-h1 {
-    text-align: center;
-    color: royalblue;
-    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .login-box {
-    display: block;
-    margin-left: 20px;
-    font-size: 2em;
+    border: 2px solid black;
+    text-align: center;
+    color: royalblue;
+    padding: 14px;
+    width: 50%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.details {
     text-align: left;
+    color: black;
+    padding: 20px;
+
+    input {
+
+        border-radius: 05px;
+        padding: 05px;
+        margin-bottom: 20px;
+    }
+
+    .inner-details {
+        input {
+            width: 200px;
+        }
+        select{
+            width: 200%;
+        }
+        .firstname,.address,.address2, .lastname, .state, .zipCode {
+            padding-right: 05%;
+        }
+        .zipCode {
+            padding-left: 115px;
+        }
+
+    }
+
+    select {
+        text-align: left;
+        border-radius: 05px;
+        padding: 05px;
+        margin-right: 20px;
+    }
+
+    sup {
+        color: red;
+        font-size: small;
+    }
+}
+.fullname, .fulladdress, .fullstatezip, .num, .mail,.city {
+    display: flex;
 }
 
 
-select {
-    display: block;
-    text-align: left;
-    width: 15%;
-}
+
+
 
 
