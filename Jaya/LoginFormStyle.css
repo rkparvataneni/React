@@ -3,78 +3,107 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+
 }
 
 .login-box {
     border: 3px solid dodgerblue;
     text-align: center;
-    color: royalblue;
-    padding: 14px;
+
     width: 50%;
     margin-left: 30%;
     margin-right: 30%;
-}
 
-.details {
-    text-align: left;
-    color: black;
-    padding: 20px;
-
-    input {
-
-        border-radius: 05px;
-        padding: 05px;
-        margin-bottom: 20px;
-    }
-
-    .firstname, .address, .address2, .lastname, .state, .zipCode {
-        padding-right: 05%;
-    }
-
-    .formDetails {
-        .city {
-            display: flex;
-        }
-
-        .inner-details {
-
-            input {
-                width: 200px;
-            }
-
-        }
-
-        .zipCode {
-            padding-left: 60px;
-            input {
-                width: 60px;
-            }
-
-        }
-        .num, .mail{
-            input {
-                width: 300px;
-            }
-    }
-
-    select {
-        text-align: left;
-        width: 150%;
-        border: 2px solid black;
-        border-radius: 05px;
-        padding: 05px;
-        margin-right: 20px;
+    h1 {
+color: royalblue;
+        font-weight: lighter;
     }
 
     sup {
         color: red;
         font-size: small;
     }
+    .radio {
+
+        input {
+            margin-top: 10px;
+
+        }
+
+    }
 }
 
-.fullname, .fulladdress, .fullstatezip, .num, .mail, .flex {
-    display: flex;
+.details {
+    text-align: left;
+    padding: 20px 20px 00px 20px;
+
+
+.radio {
+    label{
+        color: black;
+    }
+    input{
+        color: grey;
+    }
 }
+    input {
+        padding: 05px;
+        border-radius: 05px;
+        margin-bottom: 20px;
+        border: 1px solid lightgray;
+    }
+
+}
+
+.fullname, .fulladdress, .fullstatezip, .num, .mail, .city {
+    display: flex;
+
+}
+
+.firstname, .address, .address2, .lastname, .state, .zipCode {
+    padding-right: 05%;
+}
+
+.formDetails {
+    color: black;
+    .inner-details {
+
+        input {
+            width: 225px;
+        }
+
+    }
+
+    .zipCode {
+        padding-left: 60px;
+
+        input {
+            width: 50px;
+        }
+
+    }
+
+    .num, .mail {
+        input {
+            width: 300px;
+        }
+    }
+
+    select {
+        text-align: left;
+        width: 150%;
+        border: 1px solid lightgray;
+        border-radius: 05px;
+        padding: 05px;
+        margin-right: 20px;
+    }
+
+
+}
+
+
+
+
 
 
 
