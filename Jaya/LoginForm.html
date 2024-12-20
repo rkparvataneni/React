@@ -7,6 +7,7 @@
 </head>
 <body>
 <form>
+    <div class="login-form">
     <div class="login-box">
         <h1>New Member Registration </h1>
         <div class="details">
@@ -51,7 +52,6 @@
                         <option value="CA">California</option>
                     </select>
                 </div>
-
                 <div class="zipCode">
                     <lable for="zipcode" class="fullstatezip">Zip/Postalcode<sup>*</sup></lable>
                     <input type="number" id="zipcode" name="zipcode" required>
@@ -60,7 +60,7 @@
             <div class="num">
                 <div>
                     <lable for="phonenum" class="num">Phone<sup>*</sup></lable>
-                    <input type="number" id="phonenum" name="phonenumber" placeholder="___) ___-____ " required>
+                    <input type="number" id="phonenum" name="phonenumber" placeholder="(___) ___-____ " required>
                 </div>
             </div>
             <div class="mail">
@@ -79,6 +79,7 @@
                 <input type="radio" id="mtype" name="membership Type" required>Ultimate</input>
             </div>
         </div>
+    </div>
     </div>
 </form>
 </body>
