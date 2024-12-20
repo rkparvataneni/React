@@ -7,9 +7,11 @@
 </head>
 <body>
 <form>
+    <div class="login-form">
     <div class="login-box">
         <h1>New Member Registration </h1>
         <div class="details">
+            <div class="formDetails">
             <div class="inner-details">
             <div class="fullname">
                 <div class="firstname">
@@ -37,6 +39,7 @@
                 <input type="text" id="city" name="city" required>
                 </div>
             </div>
+            </div>
             <div class="fullstatezip">
                 <div class="state">
                     <lable for="state" class="fullstatezip">State/Province<sup>*</sup></lable>
@@ -57,7 +60,7 @@
             <div class="num">
                 <div>
                     <lable for="phonenum" class="num">Phone<sup>*</sup></lable>
-                    <input type="number" id="phonenum" name="phonenumber" required>
+                    <input type="number" id="phonenum" name="phonenumber" placeholder="(___) ___-____ " required>
                 </div>
             </div>
             <div class="mail">
@@ -66,7 +69,7 @@
                     <input type="email" id="email" name="email" required>
                 </div>
             </div>
-</div>
+            </div>
             <div class="radio">
                 <div>
                     <lable for="mtype" class="radio">Membership Type<sup>*</sup></lable>
@@ -76,6 +79,7 @@
                 <input type="radio" id="mtype" name="membership Type" required>Ultimate</input>
             </div>
         </div>
+    </div>
     </div>
 </form>
 </body>
