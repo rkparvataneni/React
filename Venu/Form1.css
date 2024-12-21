@@ -1,0 +1,62 @@
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.page {
+    display: inline-flex;
+}
+.center{
+    margin-top: 10%;
+    margin-bottom: 50%;
+    width: 100%;
+    font-size: 1.2rem;
+    color: whitesmoke;
+}
+.message {
+    margin-top: 30%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    width: 50%;
+    padding: 100px 60px 20px 60px;
+    background-color: #cd0b3f;
+    color: white;
+    text-align: center;
+}
+input, textarea {
+    background-color: lightgray;
+    border: none;
+    width: 100%;
+    padding: 20px;
+    margin: 10px;
+}
+.details {
+    margin-top: 30%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    width: 50%;
+    background-color: white;
+    padding: 100px 60px 20px 60px;
+    color: black;
+    text-align: left;
+    textarea {
+        height: 100px;
+    }
+    h1 {
+        text-align: center;
+    }
+    button {
+        color: white;
+        background-color: indianred;
+        border: none;
+        border-radius: 30px;
+        width: 50%;
+        height: 40px;
+        margin-left: 140px;
+    }
+
+}
+.input {
+    margin-right: 80px;
+}

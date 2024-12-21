@@ -1,0 +1,47 @@
+form {
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+    border: 2px solid;
+    font-size: 20px;
+}
+. details{
+    margin: 10%;
+    text-align: center;
+    border: 1px solid;
+}
+.message {
+    margin-top: 30%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    padding: 20px 20px 20px 20px;
+    background-color: #cd0b3f;
+    color: white;
+    text-align: center;
+}
+input, textarea {
+    background-color: whitesmoke;
+    border-style: groove;
+    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
+    margin: 20px;
+}
+h1 {
+        text-align: center;
+    }
+.input {
+    display: flex;
+}
+.required{
+    color: red;
+    content: "*";
+}
+.form-label {
+    text-align: left;
+    width: 12%;
+    padding: 20px ;
+}
+.submit-id{
+    text-align: center;
+
+}
