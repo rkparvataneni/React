@@ -1,0 +1,129 @@
+.page--home {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+.evernorth-sdc-alert__content, .evernorth-sdc-alert__close, .visually-hidden, .block--page-title-block {
+    display: none;
+}
+
+/*menu*/
+.region--primary-menu {
+    z-index: 1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+}
+
+.region--container {
+    display: flex;
+
+    .mobile-navigation-bar {
+        display: none;
+    }
+
+    .menu--container {
+        display: flex;
+    }
+
+    .navigation, .language-switcher-language-url {
+
+        ul {
+            list-style: none !important;
+        }
+
+        li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+            unicode-bidi: isolate;
+            padding-left: 20px;
+
+            a {
+                text-decoration: none;
+            }
+
+            button {
+                border: none;
+                background-color: white;
+                color: #00363d;
+
+            }
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu-level--1 {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            top: auto;
+            left: 0;
+            background-color: #33818b;
+            color: #33818b;
+            width: 200px;
+            border: 1px solid #444;
+            transition: opacity 0.3s ease, visibility 0s linear 0.3s; /* Smooth fade-in/out */
+        }
+
+        .menu-item--parent:hover .menu-item-element {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.3s ease; /* Smooth fade-in */
+        }
+    }
+}
+
+/*Health care build around you*/
+
+.evernorth-sdc-hero--bgcolor-brand-strong {
+    background-color: #035c67;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .evernorth-sdc-hero--bgcolor-brand-strong {
+        background-color: #035c67;
+    }
+
+    .evernorth-sdc-hero__inner {
+        display: flex;
+        align-items: center;
+        margin-left: 10%;
+        margin-right: 10%;
+        height: 400px;
+    }
+
+    .evernorth-sdc-hero__image img {
+        width: 486px;
+        height: 390px;
+    }
+
+    .evernorth-sdc-hero__content_container {
+        display: flex;
+        width: 100%;
+    }
+
+    .evernorth-sdc-hero__content {
+        display: flex;
+        flex-direction: column;
+
+        color: white;
+        h3 {
+            font-size: 3em;
+margin-bottom: 20px;
+        }
+        .evernorth-sdc-hero__quick-links{
+            padding-bottom: 20px;
+            font-size: 1.3em;
+            select{
+                width: 60%;
+                height: 38px;
+                border-radius: 08px;
+                padding-left: 10px;
+                margin: 10px 10px 10px 00px;
+            }
+        }
+    }
+
+}
