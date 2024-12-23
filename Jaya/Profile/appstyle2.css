@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-.evernorth-sdc-alert__content, .evernorth-sdc-alert__close, .visually-hidden, .block--page-title-block {
+.evernorth-sdc-alert__content, .evernorth-sdc-alert__close, .visually-hidden, .evernorth-sdc-content-card__arrows, .block--page-title-block {
     display: none;
 }
 
@@ -13,10 +13,12 @@
 .region--primary-menu {
     z-index: 1;
     box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+
 }
 
 .region--container {
     display: flex;
+
 
     .mobile-navigation-bar {
         display: none;
@@ -24,6 +26,9 @@
 
     .menu--container {
         display: flex;
+        width: 100%;
+        height: 100%;
+        margin-left: 30px;
     }
 
     .navigation, .language-switcher-language-url {
@@ -40,6 +45,7 @@
 
             a {
                 text-decoration: none;
+                color: #00363d !important;
             }
 
             button {
@@ -48,6 +54,18 @@
                 color: #00363d;
 
             }
+        }
+
+        .menu--header-buttons {
+            margin-left: 500px;
+
+            a {
+                .log-in {
+                    color: white !important;
+                    background-color: #00363d !important;
+                }
+            }
+
         }
 
         .menu {
@@ -107,16 +125,18 @@
     .evernorth-sdc-hero__content {
         display: flex;
         flex-direction: column;
-
         color: white;
+
         h3 {
             font-size: 3em;
-margin-bottom: 20px;
+            margin-bottom: 20px;
         }
-        .evernorth-sdc-hero__quick-links{
+
+        .evernorth-sdc-hero__quick-links {
             padding-bottom: 20px;
             font-size: 1.3em;
-            select{
+
+            select {
                 width: 60%;
                 height: 38px;
                 border-radius: 08px;
@@ -124,6 +144,315 @@ margin-bottom: 20px;
                 margin: 10px 10px 10px 00px;
             }
         }
+
+        .evernorth-sdc-quick-links__actions {
+            button {
+                align-items: center;
+                justify-content: center;
+                width: 15%;
+                height: 60px;
+                background-color: lightgreen;
+                border-radius: 10px;
+
+            }
+        }
+
     }
+}
+
+/*Save time*/
+
+.evernorth-sdc-bullet__items {
+    display: inline-flex;
+    justify-content: space-between;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+/* Individual bullet item styling */
+.evernorth-sdc-bullet-item {
+    max-width: 35%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.evernorth-sdc-bullet-item__content {
+    width: 350px;
+    padding-right: 60px;
+}
+
+/* Title styling */
+.evernorth-sdc-bullet-item__title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+    color: #035c67;; /* Dark text color */
+}
+
+/* Description styling */
+.evernorth-sdc-bullet-item__description p {
+    font-weight: 300;
+    color: #555; /* Medium-dark text */
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+}
+
+/* CTA button styling */
+.evernorth-sdc-bullet-item__cta a {
+    display: inline-block;
+    color: #035c67;
+    padding-left: 10px;
+    margin-bottom: 40px;
+}
+
+/*man holding bottle*/
+
+.evernorth-sdc-content-card__items {
+    display: flex;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1240px;
 
 }
+
+.evernorth-sdc-content-card-item {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 2px solid #d5d5d5;
+    border-radius: 16px;
+    background-color: #fff;
+
+}
+
+.field--name-field-media-image {
+    img {
+        width: 400px;
+        height: auto;
+    }
+}
+
+.evernorth-sdc-content-card__items {
+    height: 470px;
+
+    .evernorth-sdc-content-card-item__content {
+        margin-bottom: 10px;
+        padding: 10px 20px;
+
+        a {
+            color: #035c67;
+        }
+
+        .evernorth-sdc-content-card-item__description {
+            p {
+                font-size: 20px;
+                padding-bottom: 05px;
+            }
+        }
+
+        .evernorth-sdc-content-card-item__title {
+            font-size: 25px;
+            font-weight: bold;
+            color: #035c67;
+
+
+        }
+
+    }
+}
+
+/* Find answers when you need them. */
+
+
+.evernorth-sdc-overview {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 10px 30px;
+}
+
+.evernorth-sdc-overview__image {
+    flex: 1;
+    background-color: #00363d;
+    max-width: 50%;
+}
+
+
+.evernorth-sdc-overview__title {
+    font-size: 35px;
+    color: #035c67;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.evernorth-sdc-overview__description {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.evernorth-sdc-overview__cta a {
+    text-decoration: none;
+    background-color: #035c67;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+
+}
+
+.evernorth-sdc-overview__content {
+    margin-left: 80px;
+}
+
+.evernorth-sdc-overview__cta a:hover {
+    background-color: #035c67;
+}
+
+/*get more scripts */
+
+.evernorth-sdc-cta-banner__image-inner {
+    visibility: hidden;
+}
+
+.evernorth-sdc-cta-banner {
+    display: flex;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    background-color: #a3c5ff;
+    border-radius: 40px;
+
+}
+
+/* Content Area */
+.evernorth-sdc-cta-banner__content {
+    text-align: center;
+    max-width: 500px;
+
+}
+
+/* Heading Styling */
+.evernorth-sdc-cta-banner__heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: #003a6e;
+    margin-bottom: 15px;
+}
+
+/* Description Styling */
+.evernorth-sdc-cta-banner__description {
+    font-size: 25px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.evernorth-sdc-cta-banner__description a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.evernorth-sdc-cta-banner__description a:hover {
+    text-decoration: underline;
+}
+
+/*Button Styling */
+.evernorth-sdc-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #035c67;
+    color: #fff;
+    padding: 15px 22px 15px 22px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+/*footor*/
+.region--footer {
+    color: #fff;
+    background-color: #035c67;
+
+
+    .region--footer-top .region--container {
+        padding-top: 3rem;
+    }
+
+
+    div {
+        display: block;
+        unicode-bidi: isolate;
+    }
+
+    .region--footer-top .menu--footer-main {
+        line-height: 24px;
+    }
+
+    .block {
+        position: relative;
+    }
+
+    .region--footer-top .block--sites-partners {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem 0;
+        padding: 2rem 0;
+        border-top: 1px solid #d5d5d5;
+        border-bottom: 1px solid #d5d5d5;
+    }
+
+    .region--footer-top .menu--footer-main {
+        line-height: 24px;
+
+    }
+
+    .region--footer-top .block--footer-main {
+        margin-bottom: 0;
+        padding-bottom: 1.5rem;
+        line-height: 24px;
+
+    }
+
+    .region--footer-top .menu--footer-main.menu-level--0 {
+        display: flex;
+        justify-content: space-between;
+        grid-gap: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .region--footer-top .menu--footer-main .menu-item.menu-item--parent {
+
+        display: block;
+        margin-bottom: 1.5rem;
+        color: #3effc0;
+    }
+
+    .region--footer-top .menu--footer-main.menu-level--0 .menu-level--1 {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    li {
+        display: list-item;
+        text-align: -webkit-match-parent;
+        unicode-bidi: isolate;
+        color: white;
+    }
+
+
+}
+
