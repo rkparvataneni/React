@@ -15,14 +15,14 @@
 /* manu bar completed*/
 .navbar {
     align-items: center;
-    padding: 30px 15px 15px 15px;
+    padding: 08px 16px 00px 16px;
     position: sticky !important;
+    z-index: 101 !important;
     top: 0;
-    /* position: fixed;
-     overflow: hidden; */
     width: 100%;
-    height: auto;
+    height: 100%;
     background: #fff !important;
+    align-content: center;
 
     .ftco-navbar-light.scrolled {
     }
@@ -158,7 +158,7 @@
         .owl-stage {
             display: contents;
 
-            .cloned {
+            .owl-item {
                 display: none;
             }
         }
@@ -169,13 +169,17 @@
 }
 
 /*Customer*/
+
+
 .owl-stage-outer {
 }
 .ftco-animate {
     .owl-carousel {
         .owl-stage-outer {
             display: flex;
-            flex-direction: row-reverse;
+            .active{
+                display: block;
+            }
             .owl-stage {
                 .owl-item {
                     font-size: 20px;
@@ -214,6 +218,10 @@
 }
 
 /*achive*/
+.ftco-counter {
+
+    text-align: center;
+}
 .heading-section {
     margin-bottom: 40px;
 }
@@ -228,17 +236,12 @@
     color: #666666;
     line-height: 1.8;
     font-weight: 300;
-    padding-right: 15px;
-    padding-left: 15px;
 }
-.ftco-counter .text strong.number {
-    font-weight: 400;
-    font-size: 40px;
-}
+
 .block-18 strong {
-    font-size: 40px;
-    font-weight: 400;
+    font-size: 30px;
     color: #404044;
+    font-weight: 400;
 }
 
 .block-18 span {
@@ -247,8 +250,16 @@
     font-size: 20px;
     color: #666666;
     line-height: 1.6;
-    padding-left: 20px;
-    padding-right: 20px;
+
+}
+
+.block-18 span {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #666666;
+    line-height: 1.6;
+
 }
 
 /*Subcribe*/
