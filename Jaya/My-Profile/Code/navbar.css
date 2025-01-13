@@ -1,0 +1,39 @@
+
+.navbar {
+    width: 1450px;
+    position: fixed;
+    z-index: 900;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(to right, #044466, #317bbd, #214a6e);
+
+}
+.navbar__container{
+    display: inline-flex;
+    height: 70px;
+    width: 1400px;
+    align-items: center;
+    justify-content:space-evenly;
+span{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+}
+    .navbar__links {
+        display: inline-flex;
+        width: 1000px;
+        height: 30px;
+        align-items: center;
+        justify-content: space-evenly;
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding-left:160px;
+        }
+    }
+
+}
