@@ -1,5 +1,11 @@
 body{
     margin: 0px;
+    display: flex;
+    justify-content: center;
+    nav{
+        display: flex;
+        justify-content: center;
+    }
 }
 .resume {
     width: 1430px !important;

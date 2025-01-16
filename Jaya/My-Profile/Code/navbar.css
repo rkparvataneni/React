@@ -1,14 +1,15 @@
-
 .navbar {
-    width: 1450px;
+    width: 1470px;
     position: fixed;
     z-index: 900;
-    left: 0px;
     top: 0px;
     background: linear-gradient(to right, #044466, #317bbd, #214a6e);
+    align-items: center;
+    justify-content:space-evenly;
+    display: flex;
 
 }
-.navbar__container{
+.navbar-container{
     display: inline-flex;
     height: 70px;
     width: 1400px;
@@ -20,7 +21,7 @@ span{
     font-weight: bold;
     font-style: italic;
 }
-    .navbar__links {
+    .navbar-links {
         display: inline-flex;
         width: 1000px;
         height: 30px;

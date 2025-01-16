@@ -1,25 +1,30 @@
 body {
     background-image: url('../images/bg1.jpg');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-
+    display:flex;
+    justify-content: center;
     height: 100%;
 
 
 }
 .navbar {
     background:none !important;
+    display: flex;
+    justify-content: center!important;
+    align-items: center!important;
 }
-
-.contact-container {
+.contact-info{
     display: flex;
     width: 1400px;
     height: 584px;
     justify-content: center;
     margin-top: 100px;
-    margin-bottom: 135px;
+    margin-bottom: 110px;
+}
 
+.contact-container {
     .contact-header {
         width: 900px;
 
@@ -28,7 +33,7 @@ body {
             text-shadow: 1px 1px 2px black, 0 0 25px #eda528, 0 0 5px  blue;
             color: #eda528;
             font-size: 50px;
-            margin-top: 30px;
+            margin-top: 0;
         }
         .contact-my-details
         {
@@ -44,7 +49,7 @@ body {
             }
 
             span {
-                font-size: 20px;
+                font-size: 25px;
                 margin-bottom: 0px;
                 padding-left: 5px;
                 font-weight: 400;
@@ -52,10 +57,10 @@ body {
             }
 
             .address {
-                font-size: 18px;
+                font-size: 25px;
                 margin-top: 0px;
                 padding-left: 5px;
-                font-weight: 500;
+                font-weight: 400;
                 border: none;
                 line-height: 1.3;
                 color: white;
