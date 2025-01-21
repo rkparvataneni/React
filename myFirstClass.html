@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First Class</title>
+        <base href="http://localhost:63342/">
+        <link rel="stylesheet" type="text/css" href="/.idea/index.css">
+        <script>
+            var myClassCount = '6';
+            var myClassCountNumber = 6.23;
+            var color = 'red';
+            console.log("myClassCount type = " + typeof myClassCount);
+            console.log("myClassCountNumber type = " + typeof myClassCountNumber);
+
+            /*
+                number - primitive ex: var myClassCountNumber = 6.23;
+                string - primitive ex: var myClassCount = '6';
+                boolean - primitive ex: var isSuccessful = true;
+                Null - primitive ex: var count = null;
+                Undefined - primitive ex: console.log("myClassCount type = " + myClassCountTest);
+                BigInt
+                Symbol
+
+                Object - non-primitive ex:  var person = { color: 'red', make: 'nissan' } car.color - access value
+                Array - non-primitive ex: var studentNames = ['venu', 'teja', 'jaya'] // studentNames[0]
+                function - function myFunction(a, b){ return a + b } // myFunction(1,2) // 3
+
+             */
+            /*
+                Operators
+                Assignment
+                var value = "2";
+                x += y // x = x + y // += , -=, *=, /=
+
+
+                Arithmetic
+                 +, -, *, /
+
+                 ++ // increment i + 1 == i++
+                 -- // decrement
+                 %  // 5 % 3  // 2
+                 ** // 2 ** 10 // 1024
+
+
+                comparison
+
+                var x = 5;
+                var y = 7;
+                var z = '7';
+
+                x == y // false
+                y == z // true
+                y === z // false
+
+                x < y
+                x <= y
+                x > y
+                x >= y
+
+                x !== y
+
+                ? - ternary
+
+                var test = y === z ? 10 : 12;
+
+                logical
+                 && //  x === y && y === z
+                 || //  x === y || y === z
+                 !  // x !== y
+
+            *
+            */
+            /*
+                // Objects
+                var car = {
+                    make: "Nissan",
+                    color: "Blue",
+                    model: "Altima",
+                    baseCost: "30000",
+                    taxes: "2000"
+                    feature: {
+                        camera: true,
+                        blindSpotDetection: false
+                    },
+                    totalCost: function() {
+                        return parseInt(this.baseCost, 10) + parseInt(this.taxes, 10); //
+
+                    }
+
+                }
+
+                var car = {}
+
+                var carName = '';
+
+                if(car) { // true
+
+                }
+                if(Object.keys(car).length === 0) { // undefined, null, 0, false, ''
+                    console.log("car is not available")
+                }else {
+                    console.log("car is available")
+                }
+
+                // car.totalCost()
+                // delete car.make
+
+                //car.feature.camera
+
+                // car.color or car["color"]
+
+                // Arrays
+
+                var fruits = [{ name: "Apple", color: "red"}, {name: "Orange", color: "yellow"}, {name: "Banana", color: "yellow"}]
+
+                var fruits = ["Apple", "Orange", "Banana", "Kiwi" ];
+
+                 fruits.push("Mango");
+                 fruits.pop();
+                 fruits.length;
+
+                var fruits = ["Apple", "Orange", "Banana", "Kiwi" ];
+
+                for(i=0; i < fruits.length; i++){
+                    console.log(fruits[i]);
+                }
+
+                fruits.forEach((fruit) => console.log(fruit))
+                fruits.map((fruit,index) => {
+                console.log(fruit)
+                return fruit + index;
+                })
+
+
+                fruits.filter(fruit => fruit.color === "yellow")
+                fruits.filter(fruit => fruit === "Apple" || fruit === "Banana")
+                fruits.find(fruit => fruit.color === "yellow")
+                fruits.some(fruit => fruit.color === "yellow") // boolean
+                fruits.every(fruit => fruit.color === "yellow") // boolean
+                fruits.indexOf("Apple") // -1 if element is not present, index of element if present
+                fruits.splice(2,2) // first argument is start index, second argument is deletion item count, other arguments will add elements to array
+                fruits.slice(1,2) // first argument specifies start index, second one specifies end index
+                fruits.shift() // removes element at 0 index
+                fruits.unshift("Apple") // adds element at 0 index
+                fruits.reverse() // reverses the array
+                fruits.sort() // sorts the array in alphabetical order
+
+                // var - let - const
+
+                    function test(){
+                        let b = 10;
+                        if(5 === 5){
+                            console.log("b ="+b);
+                        }
+                        console.log("a ="+a);
+                    }
+                const number = 1;
+
+                Strings
+
+                let name = "test xyz";
+
+                let fruits = "   Apple|Orange|Banana|Kiwi     "
+
+                name.length // length of the string
+                name.at(1)   //
+                name.charAt(1) //
+                name.split()
+                name.slice()
+                name.substring()
+                name.substr()
+
+                name.trim()
+                name.padStart()
+                name,padEnd()
+
+
+
+
+            functions:
+
+                function myFunction(a, b) {
+                    return a + b;
+                }
+
+                var myFunction = (a, b) => { return a + b }
+
+                setTimeout(function(){},1000)
+                setTimeInterval(function(){},1000)
+
+                for(var i = 0; i < 5; i++){
+                 setTimeout(function(){
+                    console.log("i == "+i);
+                 },1000 * i)
+                }
+
+
+
+             */
+        </script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    <h1>My First Class</h1>
+    <form>
+        <label for="name" class="secondName" >Name:</label>
+        <input type="text" id="name" name="name"><br/>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br/>
+        <input type="radio" id="male" name="gender" value="male" checked="checked">
+        <label for="male" class="name" >Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br/>
+        <label>Select your Hobby</label>
+        <input type="checkbox" id="cricket" name="hobby" value="cricket">
+        <label for="cricket">Cricket</label>
+        <input type="checkbox" id="music" name="hobby" value="music">
+        <label for="music" class="name" >Music</label>
+        <input type="checkbox" id="travel" name="hobby" value="travel">
+        <label for="travel">Travel</label><br/>
+        <label for="airport" class="name" >Select your country</label>
+        <select id="airport">
+            <option value="ewr">Newark</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+        </select>
+        <br/>
+        <label for="city">Select your city</label>
+        <input list="country2" type="text" id="city" name="city"><br/>
+        <datalist id="country2">
+            <option value="australia"></option>
+            <option value="canada"></option>
+            <option value="usa"></option>
+        </datalist>
+        <label for="comments">Comments </label>
+        <textarea id="comments" name="comments" cols="20" rows="30"></textarea><br/>
+        <button type="submit">Submit</button>
+        <input type="date" id="date" name="date">
+    </form>
+    </body>
+</html>
