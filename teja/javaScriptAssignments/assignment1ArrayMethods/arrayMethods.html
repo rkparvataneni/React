@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>//forEach
+  const studentName =["ravi", "teja", "bunty", "jaya"];
+  studentName.forEach((name, index) => {console.log("RollNumber-"+index+": name-"+name)});
+  //forEach method runs through all the elements in the array.
+
+  //map
+  const arrayNumbers = [2,4,6,8]
+  const doubled = arrayNumbers.map(number => number *2);
+  console.log(doubled);
+  //map method runs through all the elements in the array and transforms them to new array according to the condition given
+  //and returns the transformed array
+
+  //filter
+  const employees = [{name:"teja", department:"developer"},
+    {name:"Jaya", department:"testing"},
+    {name:"ravi", department:"testing"},];
+  const testingDepartment = employees.filter(employee => employee.department ==="testing");
+  console.log(testingDepartment);
+
+  //Filtering the list of employees, returning those only in testing department
+
+  //find
+  const products =[{id:1, product:"laptop"},
+    {id:2, product:"mobile"},
+    {id:2, product:"desktop"}];
+  const findProduct = products.find(product => product.id===2);
+  console.log(findProduct);
+  //finding product with id=2, find gives the first product that matches the condition
+
+  //some
+  const numbers= [1,3,4,7,8];
+  console.log(numbers.some(num => num%2===0))
+  // o/p will be true. it gives boolean output checking wheather the condition matches for atleast one element in the array
+
+  //every
+  const students = [{name:"ravi", score:45},
+    {name:"teja", score:56},
+    {name:"Jaya", score:67},];
+  console.log(students.every(student => student.score>40));
+  // o/p will be true. it gives boolean output checking wheather all the elements in the array matches the condition.
+
+  //indexOf
+  const array1 =[1,2,3,4,5,6,7,8,9];
+  console.log(array1.indexOf(4));
+  //it gives the index of particular element in the array.
+
+  //splice
+  const tasks =["reading", "writing", "listening", "speaking"];
+
+  tasks.splice(1,3,"listening", "speaking", "writing");
+  console.log(tasks);
+
+  //removes and can add the elements in the array. first argument is starting index of elements need to be removed,
+  //second argument is count of elements needs to be removed
+  //if we want to add elements then mention the elements
+
+  //slice
+  const users = ["user1","user2","user3","user4","user5"];
+  const selectUsers = users.slice(1,4);
+  console.log(selectUsers);
+  //slice is used to get the subset of array. 1st argument is starting index and
+  // 2nd argument is end index(end index is not included in array)
+
+  //shift
+  let racQueue = ["Rac1","Rac2","Rac3","Rac4","Rac5"];
+  const confirmBerth = racQueue.shift();
+  console.log(confirmBerth);
+  //shift removes and returns the element at first index of the array.
+
+  //unshift
+  const confirmedBerth = racQueue.unshift("CNF");
+  console.log(confirmedBerth);
+  //unshift adds the element at first index of the array
+
+  //reverse
+  const numbersArray = [1,2,3,4,5,6,7,8,9,10];
+  console.log(numbersArray.reverse());
+  //reverse the order of the array
+
+  //sort
+  const studentNames=["teja","ravi","bunty", "Jaya"];
+  console.log(studentNames.sort());
+  //sort the names in alphabetical order
+
+  const numbersArray2 = [1,2,33,43,25,36,47,8,9,10];
+  console.log(numbersArray2.sort());
+  //sorting numbers won't give expected results because
+  //the sort method converts the elements to strings and sort them alphabetically
+  //to sort numbers in ascending order we need to provide a compare function to sort method
+  const sortedArray = numbersArray2.sort((a,b) => a-b );
+
+
+  //String Methods
+  //length
+  const string1 = "ravi teja";
+  console.log(string1.length);
+  //it gives the length of the string;
+
+  //at(index)
+  const string2 = "ravi teja";
+  console.log(string2.at(0));//o/p r
+  console.log(string2.at(-3));//o/p e
+  //gives character at particular index
+  //supports -ve index also (-1 from end)
+
+  //charAt(index)
+  console.log(string2.charAt(3)); //o/p v
+  //same as at(index), gives the character at particular index
+  //doesn't support -ve index values
+
+  //split
+  const string3 = "ravi,teja";
+  console.log(string3.split(",")); //o/p [ravi, teja]
+  //splits the string into array based on given seperator
+
+  //slice
+  console.log(string3.slice(0,4));// o/p ravi
+  console.log(string3.slice(-4)); // teja
+  // it gives the part of a string, first argument starting index of substring, 2nd argument is last index of substring
+  //it supports -ve value also starting from -1(last index of string) to backwards
+  //if we didnt we the end index then it will take upto last index of string
+
+  //substring
+  console.log(string3.substring(0,4)); //0/p ravi
+  console.log(string3.substring(4,0)) ;//0/p ravi
+  // similar to slice, but doesn't support -ve values
+  //if we given starting index as highest and last index as low it automatically swaps the values
+
+  //substr
+  console.log(string3.substr(0,4)); //0/p ravi
+  //gives the substring from starting to the length mentioned
+  //first argument is start index and 2nd argument is length
+
+  //trim
+  const string4= "  ravi teja. ";
+  console.log(string4.trim(0,4)); //0/p 'ravi teja'
+  //removes the spaces at starting and ending of the string
+
+  //padStart
+  const number2 ="278";
+  console.log(number2.padStart(4, "$"));
+  //pads the string with certain character at the start
+  //1st argument is target length of string
+  //2nd argument is pad string
+
+  //padEnd
+  console.log(number2.padEnd(7, "#"));
+  //pads the string with certain character at the end
+  //1st argument is target length of string
+  //2nd argument is pad string
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
