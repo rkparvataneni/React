@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <script>//forEach
+script>//forEach
   const studentName =["ravi", "teja", "bunty", "jaya"];
   studentName.forEach((name, index) => {console.log("RollNumber-"+index+": name-"+name)});
-  //forEach method runs through all the elements in the array.
+  //forEach method iterates through all the elements in the array.
 
   //map
   const arrayNumbers = [2,4,6,8]
   const doubled = arrayNumbers.map(number => number *2);
   console.log(doubled);
-  //map method runs through all the elements in the array and transforms them to new array according to the condition given
+  //map method iterates through all the elements in the array and transforms them to new array according to the condition given
   //and returns the transformed array
 
   //filter
@@ -73,9 +73,10 @@
   //shift removes and returns the element at first index of the array.
 
   //unshift
-  const confirmedBerth = racQueue.unshift("CNF");
-  console.log(confirmedBerth);
-  //unshift adds the element at first index of the array
+ const updatedQueue = racQueue.unshift("CNF");
+  console.log(updatedQueue);
+  console.log(racQueue);
+  //unshift adds the element at first index of the array and returns the length of array
 
   //reverse
   const numbersArray = [1,2,3,4,5,6,7,8,9,10];
@@ -93,6 +94,7 @@
   //the sort method converts the elements to strings and sort them alphabetically
   //to sort numbers in ascending order we need to provide a compare function to sort method
   const sortedArray = numbersArray2.sort((a,b) => a-b );
+  console.log(sortedArray);
 
 
   //String Methods
@@ -123,7 +125,7 @@
   console.log(string3.slice(-4)); // teja
   // it gives the part of a string, first argument starting index of substring, 2nd argument is last index of substring
   //it supports -ve value also starting from -1(last index of string) to backwards
-  //if we didnt we the end index then it will take upto last index of string
+  //if we didn't mention the end index then it will take upto last index of string
 
   //substring
   console.log(string3.substring(0,4)); //0/p ravi
@@ -150,25 +152,35 @@
 
 
   //padEnd
-  console.log(number2.padEnd(7, "#"));
+  console.log(number2.padEnd(7, "#$"));
   //pads the string with certain character at the end
   //1st argument is target length of string
   //2nd argument is pad string
 
+  const name = "New York is a big city in the Country";
 
+  let arr=name.split(' ');
+  arr.sort((a,b) => a.length - b.length);
+  console.log(arr[0]); console.log(arr[arr.length-1]);
 
+  const  name2 = "jhfjgffafgfgfaghhhhfsfsfdsfdf";
+ // step1 = name2.replace("ff", "f");
+  //step2 = step1.replace("hhhh", "h");
+  //console.log(step2);
 
+  let r = '';
+  for(let i=0; i<name2.length; i++){
 
-
-
-
-
-
-
+      if(name2[i] !== r[r.length-1]){
+          r += name2[i];
+      }
+  }
+  console.log(r);
 
   </script>
 </head>
-<body>
+<body >
+
 
 </body>
 </html>
