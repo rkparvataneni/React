@@ -245,5 +245,4 @@ for (let i = 0; i < data1.length-10; i++) {
 
     data1[i+10].id = i+11;
 
-
 }
