@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form1</title>
+  <link rel="stylesheet" href="form2style.css">
+  <script>
+    function validateForm() {
+      let valid =true;
+      let firstName = document.getElementById("firstName").value;
+      let firstNameValid =true;
+      if(firstName===""){
+        document.getElementById("firstName").style.color = "red";
+        firstNameValid = false;
+      }
+      else {
+        for (let i = 0; i < firstName.length; i++) {
+          if (!((firstName[i] >= 'A' && firstName[i] <= 'Z') || (firstName[i] >= 'a' && firstName[i] <= 'z'))) {
+            document.getElementById("firstname").style.color = "red";
+            firstNameValid = false;
+          }
+
+        }
+      }
+      if(!firstNameValid) {
+        document.getElementById("firstname").style.color = "red";
+        valid = false;
+      }
+      else{
+        document.getElementById("firstname").style.color = "black";
+
+      }
+
+
+
+      let lastName = document.getElementById("lastName").value;
+      let lastNameValid =true;
+
+      if(lastName===""){
+        document.getElementById("lastname").style.color = "red";
+        lastNameValid = false;
+      }
+      else {
+        for (let i = 0; i < lastName.length; i++) {
+          if (!((lastName[i] >= 'A' && lastName[i] <= 'Z') || (lastName[i] >= 'a' && lastName[i] <= 'z'))) {
+            document.getElementById("lastname").style.color = "red";
+            lastNameValid = false;
+          }
+        }
+      }
+      if(!lastNameValid) {
+        document.getElementById("lastname").style.color = "red";
+        valid = false;
+      }
+      else{
+        document.getElementById("lastname").style.color = "black";
+
+      }
+
+      let dob = document.getElementById("dob").value;
+      let dateValid =true;
+      if(dob===""){
+        dateValid =false;
+      }
+      else{
+        let dobArray = dob.split("-");
+        if(!(dobArray[0] >= 1996 && dobArray[0] <=2025)){
+          dateValid =false;
+        }
+
+      }
+
+      if(!dateValid){
+        document.getElementById("dobID").style.color = "red";
+        valid = false;
+      }
+      else{
+        document.getElementById("dobID").style.color = "black";
+      }
+
+      let city = document.getElementById("city").value;
+
+      if(city===""){
+        document.getElementById("cityID").style.color = "red";
+        valid = false;
+      }
+      else{
+        document.getElementById("cityID").style.color = "black";
+      }
+
+      let state = document.getElementById("state").value;
+      if(state===""){
+        document.getElementById("stateID").style.color = "red";
+        valid = false;
+      }
+      else{
+        document.getElementById("stateID").style.color = "black";
+      }
+
+      let phone = document.getElementById("phonenum").value;
+      let validPhone = true;
+      if(phone===""){
+        validPhone = false;
+      }
+      else{
+        for(let i = 0; i < phone.length; i++) {
+          if (!(phone[i] >= '0' && phone[i] <= '9')) {
+            validPhone = false;
+          }
+        }
+      }
+
+      if(!validPhone){
+        document.getElementById("phonenumID").style.color = "red";
+        valid = false;
+      }
+      else{
+        document.getElementById("phonenumID").style.color = "black";
+      }
+
+
+      let email = document.getElementById("email").value;
+      let emailValid = true;
+      if(email===""){
+        emailValid =false;
+      }
+      else if(!(email.includes('@') && email.includes('.'))) {
+        emailValid =false;
+      }
+      /*else{
+        let emailArray1 = email.split("@");
+        let emailArray2 = emailArray1[1].split(".");
+
+        if(!(emailArray1.length === 2 && emailArray2[0] === 2))
+        {
+
+          emailValid =false;
+        }
+
+      }*/
+
+      if(!emailValid){
+        document.getElementById("emailID").style.color = "red";
+        valid = false;
+      }
+      else{
+        document.getElementById("emailID").style.color = "black";
+      }
+
+
+      let zipcode = document.getElementById("zipcode").value;
+      let zipcodeValid = true;
+      if(zipcode===""){
+        zipcodeValid =false;
+      }
+
+      else{
+        for(let i = 0; i < zipcode.length; i++) {
+          if(!(zipcode[i] >= '0' && zipcode[i] <= '9')){
+            zipcodeValid = false;
+          }
+        }
+      }
+
+      if(!zipcodeValid){
+        document.getElementById("zipID").style.color = "red";
+        valid = false;
+      }
+      else{
+        document.getElementById("zipID").style.color = "black";
+      }
+
+
+      let standard = document.getElementById("mtype1");
+      let premium = document.getElementById("mtype2");
+      let ultimate = document.getElementById("mtype3");
+
+      if(!( standard.checked || premium.checked || ultimate.checked)){
+        document.getElementById("memberID").style.color = "red";
+        valid = false;
+      }
+      let membershipType;
+      if(standard.checked){
+        membershipType = "Standard";
+      }
+      else if(premium.checked){
+        membershipType = "Premium";
+      }
+      else if(ultimate.checked){
+        membershipType = "Ultimate";
+      }
+
+      else{
+        document.getElementById("memberID").style.color = "black";
+      }
+
+
+      if(!valid){
+        return false;
+      }
+      else {
+        alert("FirstName :"+firstName + "LastName :" +lastName + "Date :" +dob + "City :" +city + "State :" +state+ "Phone :" +phone
+                + "Email :" +email + "zipcode :" +zipcode + "MemberShip Type :" +membershipType);
+        //console.log(("FirstName :"+firstName + "LastName :" +lastName + "Date :" +dob + "City :" +city + "State :" +state+ "Phone :" +phone + "Email :" +email + "zipcode :" +zipcode ));
+
+        return true;
+
+      }
+
+    }
+  </script>
+</head>
+<body>
+<form name="myForm" onsubmit="return validateForm()">
+  <div class="login-form">
+    <div class="login-box">
+      <h1>New Member Registration </h1>
+      <div class="details">
+        <div class="formDetails">
+          <div class="inner-details">
+            <div class="fullname">
+              <div class="firstname">
+                <lable for="firstname" class="fullname" id="firstname">First Name<sup>*</sup></lable>
+                <input type="text" id="firstName" name="firstName" required="">
+              </div>
+              <div class="lastname">
+                <lable for="lastName" class="fullname" id="lastname">Last Name<sup>*</sup></lable>
+                <input type="text" id="lastName" name="lastName" required=""><br>
+              </div>
+            </div>
+            <div class="fulladdress">
+              <div class="address">
+                <lable for="DOB" class="fulladdress" id="dobID">DOB<sup>*</sup></lable>
+                <input type="date" id="dob" name="address" required="">
+              </div>
+
+            </div>
+            <div class="city">
+              <div>
+                <lable for="city" class="city" id="cityID"> Select your City<sup>*</sup></lable>
+                <input list="country2" type="text" id="city" name="city" required="">
+                <datalist id="country2">
+                  <option value="australia"></option>
+                  <option value="canada"></option>
+                  <option value="usa"></option>
+                </datalist>
+              </div>
+            </div>
+          </div>
+          <div class="fullstatezip">
+            <div class="state">
+              <lable for="state" class="fullstatezip" id="stateID">State/Province<sup>*</sup></lable>
+              <select id="state" name="state" required="">
+                <option value=""></option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+              </select>
+            </div>
+            <div class="zipCode">
+              <lable for="zipcode" class="fullstatezip" id="zipID">Zip/Postal code<sup>*</sup></lable>
+              <input type="number" id="zipcode" name="zipcode" required="">
+            </div>
+          </div>
+          <div class="num">
+            <div>
+              <lable for="phonenum" class="num" id="phonenumID">Phone<sup>*</sup></lable>
+              <input type="number" id="phonenum" name="phonenumber" placeholder="(___) ___-____ " required="">
+            </div>
+          </div>
+          <div class="mail">
+            <div>
+              <lable for="email" class="mail" id="emailID">Email Address<sup>*</sup></lable>
+              <input type="email" id="email" name="email" required="">
+            </div>
+          </div>
+        </div>
+        <div class="radio">
+          <div>
+            <lable for="mtype" class="radio" id="memberID">Membership Type<sup>*</sup></lable>
+          </div>
+          <input type="radio" id="mtype1" name="membershipType" required="">Standard
+          <input type="radio" id="mtype2" name="membershipType" required="">Premium
+          <input type="radio" id="mtype3" name="membershipType" required="">Ultimate
+        </div>
+        <input type="submit" value="Register" onclick="validateForm()">
+      </div>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>
