@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Form-validation-2</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="device-width initial-scale=1">
+   <style>
+   h2{
+     font-size: 35px;
+   }
+
+     body {
+        font-family: Arial, sans-serif;
+       
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+
+     #form-container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        width: 500px;
+     }
+
+     h2 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+     }
+
+     label {
+        font-size: 14px;
+        color: #555;
+        display: block;
+        margin-bottom: 6px;
+     }
+
+     input[type="text"],
+     input[type="number"],
+     input[type="email"],
+     input[type="date"],
+     input[list] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+     }
+
+     button {
+       color:green;
+       padding: 10px;
+       font-size: 16px;
+        border: none;
+     }
+
+   </style>
+
+</head>
+<body>
+
+   <div id="form-container">
+   <form class="form-validion" id="validation-2">
+
+    <h2>Hotel Feedback Form</h2>
+     <div>
+        <label id="pf">Prefix</label>
+        <select id="select">
+           <option>Mr.</option>
+           <option>Mrs.</option>
+           <option>Ms.</option>
+        </select>
+    <label class="Gname" id="fname">Guest Name</label>
+    <input type="text" class="iGname" id="Gname" placeholder="Enter your Full Name">
+
+    <label class="RoomNo." id="number">Room #</label>
+    <input type="number" class="iroom" id="RoomNo.">
+    </div>
+
+    <div>
+    <label class="check" id="checkIn">Check-in</label>
+    <input  type="date" id="check">
+
+    <label class="check-out" id="check-OUT">Check-out</label>
+    <input  type="date" id="check-out">
+    </div>
+
+    <div>
+     <label class="mail" id="mail1">E-Mail:</label>
+     <input type="email" id="mail" placeholder="abc@gmail.com">
+    </div>
+
+    <div>
+    <label id="content1">How did you hear about the hotel?</label>
+    <div>
+    <input type="radio" class="radio1" id="Radio-1" name="hear_about_hotel">Friends and family
+    <input type="radio" class="radio2" id="Radio-2" name="hear_about_hotel">Social Media
+    <input type="radio" class="radio3" id="Radio-3" name="hear_about_hotel">Ads
+    </div>
+    </div>
+    
+    <div>
+        <label id="checkbox1">Service Quality</label>
+        <div>
+        <input type="checkbox" id="Check1" name="service_quality">Excellent
+        <input type="checkbox" id="Check2" name="service_quality">Good
+        <input type="checkbox" id="Check3" name="service_quality">Poor
+        </div>
+    </div>
+
+    <button type="button" id="Submit" onclick="showformData(event)">Submit</button>
+   </form>
+
+   </div>
+
+   <script>
+     function showformData(event) {
+        event.preventDefault(); 
+        const form2 = document.getElementById('validation-2');
+        
+        const label1_prefix = document.getElementById("pf");
+        const prefixInput = document.getElementById("select");
+        
+        const label2_Name = document.getElementById("fname");
+        const input1_Name = document.getElementById("Gname");
+        
+        const label3_Room = document.getElementById("number");
+        const input2_Room = document.getElementById("RoomNo.");
+        
+        const label4_checkin = document.getElementById("checkIn");
+        const input3_check = document.getElementById("check");
+        
+        const label5_checkout = document.getElementById("check-OUT");
+        const input4_checkout = document.getElementById("check-out");
+        
+        const label6_mail = document.getElementById("mail1");
+        const input_mail = document.getElementById("mail");
+        
+        const label7_radio1 = document.getElementById("content1");
+        const input_radio1 = document.getElementById("Radio-1");
+        const input_radio2 = document.getElementById("Radio-2");
+        const input_radio3 = document.getElementById("Radio-3");
+        
+        const label_checkbox = document.getElementById("checkbox1");
+        const input_Check1 = document.getElementById("Check1");
+        const input_Check2 = document.getElementById("Check2");
+        const input_Check3 = document.getElementById("Check3");
+
+        let formIsValid = true;
+
+    
+        resetLabels();
+
+    
+        if (prefixInput.value === "") {
+        label1_prefix.style.color = "red";
+        formIsValid = false;
+        }
+       if (input1_Name.value === "" ||
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].some(char => input1_Name.value.includes(char)) ||
+        ["#", "$", "@", "!", "%", "^", "&", "*", "(", ")"].some(char => input1_Name.value.includes(char))) {
+        label2_Name.style.color = "red";
+        formIsValid = false;
+       }
+       if (input2_Room.value === "") {
+        label3_Room.style.color = "red";
+        formIsValid = false;
+       }
+
+       const checkInDate = new Date(input3_check.value);
+
+       const checkOutDate = new Date(input4_checkout.value);
+       if (!input4_checkout.value || checkOutDate <= checkInDate) {
+        label5_checkout.style.color = "red";
+        formIsValid = false;
+       }
+
+       if (input_mail.value === "" || !input_mail.value.includes("@")) {
+        label6_mail.style.color = "red";
+        formIsValid = false;
+       }
+
+      if (!input_radio1.checked && !input_radio2.checked && !input_radio3.checked) {
+        label7_radio1.style.color = "red";
+        formIsValid = false;
+      }
+
+      if (!input_Check1.checked && !input_Check2.checked && !input_Check3.checked) {
+        label_checkbox.style.color = "red";
+        formIsValid = false;
+      }
+
+
+        
+        if (formIsValid) {
+            const formData = `
+               Prefix: ${prefixInput.value}\n
+               Guest Name: ${input1_Name.value}\n
+               Room No: ${input2_Room.value}\n
+               Check-in Date: ${input3_check.value}\n
+               Check-out Date: ${input4_checkout.value}\n
+               Email: ${input_mail.value}\n
+               Heard about hotel: ${input_radio1.checked ? 'Friends and family' : input_radio2.checked ? 'Social Media' : 'Ads'}\n
+               Service Quality: ${input_Check1.checked ? 'Excellent' : input_Check2.checked ? 'Good' : 'Poor'}
+            `;
+            alert(formData);
+        }
+    }
+
+    
+    function resetLabels() {
+        const labels = document.querySelectorAll('label');
+        labels.forEach(label => {
+            label.style.color = ''; 
+        });
+    }
+   </script>
+
+</body>
+
+</html>
