@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        button {
+            margin: 05px;
+        }
+    </style>
+</head>
+<body onload=" buttonDetails()" style="margin: 30px">
+<script>
+    let details =
+        [{
+            id: 1,
+            username: "Bret",
+            email: "Sincere@april.biz",
+        }];
+
+
+    for (let i = 1; i < 200; i++) {
+        details.push({
+            id: details[0].id + i,
+            username: details[0].username,
+            email: details[0].email
+        });
+    }
+    //let rowsPerPage = 5;
+    // let currentPage = 1;
+
+
+    function buttonDetails(currentPage, rowsPerPage) {
+        let details = document.getElementById('buttonId');
+        rowsPerPage = parseInt(document.getElementById('mySelect').value);
+        currentPage = parseInt(document.getElementById("inputClass").innerText);
+        let buttonValue = Math.ceil(200 / rowsPerPage);
+        details.innerHTML = '';
+        let createButtonPrev = document.createElement('button');
+        createButtonPrev.innerHTML = "<";
+        createButtonPrev.onclick = function () {
+            if (currentPage > 1) {
+                currentPage--;
+                tableDetails(currentPage, rowsPerPage);
+            }
+        };
+        details.appendChild(createButtonPrev);
+
+        for (let i = 1; i <= buttonValue; i++) {
+            let createButton = document.createElement('button');
+            createButton.innerHTML = i;
+            createButton.onclick = function () {
+                currentPage = i;
+                let currentPage1 = document.getElementById("inputClass");
+                currentPage1.innerHTML = currentPage;
+                let buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    let buttonColor=parseInt(button.innerHTML);
+                    if ( buttonColor==currentPage) {
+                        button.style.backgroundColor = "red";
+                    } else {
+                        button.style.backgroundColor = "";
+                    }
+                });
+                tableDetails(currentPage, rowsPerPage);
+            };
+            details.appendChild(createButton);
+        }
+        tableDetails(currentPage, rowsPerPage);
+        let createButtonNext = document.createElement('button');
+        createButtonNext.innerHTML = ">";
+        createButtonNext.onclick = function () {
+            if (currentPage < buttonValue) {
+                currentPage++;
+                tableDetails(currentPage, rowsPerPage);
+            }
+        };
+        details.appendChild(createButtonNext);
+
+        /*  currentValue.onchange=function (){
+              eventOnchange(currentPage, rowsPerPage);
+          }*/
+    }
+
+    /*function eventOnchange(currentPage, rowsPerPage) {
+        rowsPerPage = parseInt(document.getElementById('mySelect').value);
+        buttonDetails(currentPage, rowsPerPage);
+    }*/
+    /*function updateButtonStyle(currentPage, rowsPerPage) {
+        let buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            if (button.innerHTML === currentPage) {
+                button.style.backgroundColor = "red";
+            } else {
+                button.style.backgroundColor = "";
+            }
+        });
+    }*/
+
+    function tableDetails(currentPage, rowsPerPage) {
+        rowsPerPage = parseInt(document.getElementById('mySelect').value);
+        let table = document.getElementById('myTable');
+        table.innerHTML = '';
+        let tableHeadElement = document.createElement('thead');
+        let tableHead = document.createElement('tr');
+        let tableHead1 = document.createElement('th');
+        let tableHead2 = document.createElement('th');
+        let tableHead3 = document.createElement('th');
+        tableHead1.innerText = "Id";
+        tableHead2.innerText = "Username";
+        tableHead3.innerText = "Email";
+        tableHead.appendChild(tableHead1);
+        tableHead.appendChild(tableHead2);
+        tableHead.appendChild(tableHead3);
+        tableHeadElement.appendChild(tableHead);
+        table.appendChild(tableHeadElement);
+        let startIndex = (currentPage - 1) * rowsPerPage;
+        let endIndex = startIndex + rowsPerPage;
+        let currentPageData = details.slice(startIndex, endIndex);
+        currentPageData.forEach(data => {
+            let tableRowElement = document.createElement('tr');
+            let tableData1 = document.createElement('td');
+            let tableData2 = document.createElement('td');
+            let tableData3 = document.createElement('td');
+            tableData1.innerText = data.id;
+            tableData2.innerText = data.username;
+            tableData3.innerText = data.email;
+            tableRowElement.appendChild(tableData1);
+            tableRowElement.appendChild(tableData2);
+            tableRowElement.appendChild(tableData3);
+            table.appendChild(tableRowElement);
+        });
+    }
+</script>
+<div style="display:flex">
+    <button id="inputClass" style="display: none;">1</button>
+    <div id="buttonId" style="padding-right: 20px">
+    </div>
+    <div>
+        <label for="mySelect">No of Records:</label>
+        <select id="mySelect" class="select" onchange="buttonDetails()">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+        </select>
+    </div>
+</div>
+<div style="display:flex; justify-content: center; align-content: center; margin-top: 50px">
+    <table id="myTable">
+    </table>
+</div>
+</body>
+</html>
