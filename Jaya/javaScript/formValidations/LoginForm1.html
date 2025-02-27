@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link href="../formValidations/LoginFormStyle.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<script>
+    let airtports = [
+        {
+            name: 'Newark',
+            value: 'EWR',
+            airlines: ['Etihad', 'Emirates', 'Air India']
+        },
+        {
+            name: 'San Francisco',
+            value: 'SFO',
+            airlines: ['Etihad', 'Emirates', 'Air India']
+        },
+        {
+            name: 'New York',
+            value: 'JFK',
+            airlines: ['Etihad', 'Emirates', 'Air India']
+        },
+        {
+            name: 'Philadelphia',
+            value: 'PHL',
+            airlines: ['Etihad', 'Emirates', 'Air India']
+        },
+    ];
+
+    function selectCity() {
+        const selectState = document.getElementById('state');
+        airtports.forEach(port => {
+            let element = document.createElement('option');
+            element.innerText = port.name;
+            element.value = port.value;
+            selectState.appendChild(element);
+        });
+    }
+
+
+    function formDataAlert() {
+        let tags = ['firstname', 'lastName', 'email', 'address', 'address2', 'startDate', 'state', 'zipcode', 'city', 'phonenum', 'check', 'comments'];
+        let alertValues = {};
+        let message = "";
+        tags.forEach(tag => {
+            alertValues[tag] = document.getElementById(tag).value;
+        });
+        Object.entries(alertValues).forEach(([key, value]) => {
+            message += `${key.toUpperCase()}: ${value}\n`;
+        });
+        alert(message);
+    }
+
+    function formValidation(event) {
+        event.preventDefault();
+        let isValid = true;
+        let tags = ['firstname', 'lastName', 'email', 'address', 'address2', 'startDate', 'state', 'zipcode', 'city', 'check', 'comments', 'phonenum', 'standard', 'premium', 'ultimate'];
+        let lableTags = ['firstname1', 'lastName1', 'email1', 'address1', 'address21', 'startDate1', 'state1', 'zipcode1', 'city1', 'check1', 'comments1', 'phonenum1', "standard1"];
+        let splCharactors = ["!", "@", "#", "$", "%", "^", "&", "&", "*", "(", ")", "{", "}", ".", ",", ":", ";", "|", "_", "-", "+", "="]
+        lableTags.forEach((labletag, index) => {
+                let value = document.getElementById(tags[index]).value;
+                let label = document.getElementById(labletag);
+            if (labletag !== 'startDate1') {
+
+                if (value.trim() === '') {
+                    label.style.color = 'red';
+                    isValid = false;
+                } else {
+                    label.style.color = '';
+                }
+            }
+            if (labletag === 'startDate1') {
+
+                if (value === '') {
+                    label.style.color = 'red';
+                    isValid = false;
+                } else {
+                    label.style.color = '';
+                }
+            }
+                if (labletag !== 'email1' && labletag !== 'phonenum1' && labletag !== 'startDate1') {
+                    let valueSplit = value.split("");
+                    splCharactors.forEach((spl) => {
+                        valueSplit.forEach((splitValue) => {
+                            if (spl.includes(splitValue)) {
+                                label.style.color = 'red';
+                                isValid = false;
+                            }
+                        });
+                    });
+                }
+                if (labletag === 'standard1') {
+                    let radioButtons = document.getElementsByName("membershipType");
+                    for (let i = 0; i < radioButtons.length; i++) {
+                        if (radioButtons[i].checked) {
+                            label.style.color = '';
+                            isValid = true;
+                            break;
+                        } else {
+                            label.style.color = 'red';
+                            isValid = false;
+                        }
+                    }
+                }
+
+                if (labletag === 'check1') {
+                    let checkboxes = document.getElementById("check");
+                    if (checkboxes.checked) {
+                        label.style.color = '';
+                    } else {
+                        label.style.color = 'red';
+                        isValid = false;
+                    }
+                }
+                if (labletag === 'phonenum1') {
+                    let intvalue = parseInt(value);
+                    label.style.color = '';
+                    if (isNaN(intvalue)) {
+                        label.style.color = 'red';
+                        isValid = false;
+                    }
+                }
+            }
+        );
+
+        if (isValid) {
+            formDataAlert();
+        } else {
+            alert("Please fill in all required fields correctly.");
+        }
+    }
+</script>
+<form id="myForm">
+    <div class="login-form">
+        <div class="login-box">
+            <h1>New Member Registration </h1>
+            <div class="details">
+                <div class="formDetails">
+                    <div class="inner-details">
+                        <div class="fullname">
+                            <div class="firstname">
+                                <lable for="firstname" class="fullname" id="firstname1">First Name<sup>*</sup></lable>
+                                <input type="text" id="firstname" name="firstName">
+                            </div>
+                            <div class="lastname">
+                                <lable for="lastName" class="fullname" id="lastName1">Last Name<sup>*</sup></lable>
+                                <input type="text" id="lastName" name="lastName"></br>
+                            </div>
+                        </div>
+                        <div class="fulladdress">
+                            <div class="address">
+                                <lable for="address" class="fulladdress" id="address1">Address<sup>*</sup></lable>
+                                <input type="text" id="address" name="address">
+                            </div>
+                            <div class="address2">
+                                <lable for="address2" class="fulladdress" id="address21">Address 2</lable>
+                                <input type="text" id="address2" name="address2">
+                            </div>
+                        </div>
+                        <div>
+                            <lable for="startDate" class="mail" id="startDate1">Start Date<sup>*</sup></lable>
+                            <input type="date" id="startDate" name="address">
+                        </div>
+                        <div class="city">
+                            <div>
+                                <lable for="city" class="city" id="city1">City<sup>*</sup></lable>
+                                <input list="cityList" type="text" id="city" name="city">
+                                <datalist id="cityList">
+                                    <option value="Saint Peters">Saint Peters</option>
+                                    <option value="Saint Louis">Saint Louis</option>
+                                    <option value="Oaks">Oaks</option>
+                                    <option value="Philadelphia">Philadelphia</option>
+                                    <option value="New York">New York</option>
+                                    <option value="HILLSBOROUGH">HILLSBOROUGH</option>
+                                </datalist>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="fullstatezip">
+                        <div class="state">
+                            <lable for="state" class="fullstatezip" id="state1">State/Province<sup>*</sup></lable>
+                            <select onclick="selectCity()" id="state" name="state">
+                                <option value=""></option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                            </select>
+                        </div>
+                        <div class="zipCode">
+                            <lable for="zipcode" class="fullstatezip" id="zipcode1">Zip/Postal code<sup>*</sup></lable>
+                            <input type="number" id="zipcode" name="zipcode">
+                        </div>
+                    </div>
+                    <div class="num">
+                        <div>
+                            <lable for="phonenum" class="num" id="phonenum1">Phone<sup>*</sup></lable>
+                            <input type="number" id="phonenum" name="phonenumber" placeholder="(___) ___-____ ">
+                        </div>
+                    </div>
+                    <div class="mail">
+                        <div>
+                            <lable for="email" class="mail" id="email1">Email Address<sup>*</sup></lable>
+                            <input type="email" id="email" name="email">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="radio">
+                    <div>
+                        <lable for="standard" class="radio" id="standard1">Membership Type<sup>*</sup></lable>
+                    </div>
+                    <input type="radio" id="standard" name="membershipType">Standard</input>
+                    <input type="radio" id="premium" name="membershipType">Premium</input>
+                    <input type="radio" id="ultimate" name="membershipType">Ultimate</input>
+                </div>
+                <div class="table" id="myTable">
+
+                </div>
+                <div>
+                    <input type="checkbox" id="check" name="checkBox">
+                    <lable for="check" class="address" id="check1">I agree to the Terms and Conditions <sup>*</sup>
+                    </lable>
+
+                </div>
+                <div>
+                    <lable for="comments" class="comments" id="comments1">Please provide your Comments <sup>*</sup>
+                    </lable>
+                    <textarea id="comments" name="comments"></textarea>
+
+                </div>
+                <div class="submit">
+                    <button type="submit"  onclick="formValidation(event)" id="button" class="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
